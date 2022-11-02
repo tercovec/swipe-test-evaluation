@@ -12,7 +12,13 @@ class main(mainTemplate):
 
   def generate_graph_click(self, **event_args):
     """This method is called when the button is clicked"""
-    response = anvil.server.call('say_hi')
-    self.label.content = response
+    # response = anvil.server.call('say_hi')
+    # self.label.content = response
+    blank = self.loader_blank.file
+    sample = self.loader_sample.file
+    anvil.server.call('transmit_files', blank, sample)
+    media_obj = anvil.server.call('make_plot')
+    self.image_1.source = media_obj
+    self.download_link.url = media_obj
     
 

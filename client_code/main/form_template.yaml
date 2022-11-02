@@ -33,7 +33,7 @@ components:
       underline: false
       multiple: false
       icon: fa:upload
-    name: load_blank
+    name: loader_blank
     layout_properties: {grid_position: 'ORRRXC,GSZZMI'}
   - type: FileLoader
     properties:
@@ -60,7 +60,7 @@ components:
       underline: false
       multiple: false
       icon: fa:upload
-    name: file_loader_1
+    name: loader_sample
     layout_properties: {grid_position: 'ORRRXC,RHCHDD'}
   - type: Button
     properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
@@ -74,6 +74,20 @@ components:
     properties: {}
     name: label
     layout_properties: {grid_position: 'PBFAYR,QTOAPO'}
+  - type: Image
+    properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '',
+      foreground: '', visible: true, display_mode: original_size, spacing_above: small,
+      source: '', spacing_below: small, background: '', horizontal_align: center}
+    name: image_1
+    layout_properties: {grid_position: 'JLXFMQ,ANRLNP'}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: download image, font_size: null, wrap_on: mobile, font: '',
+      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: download_link
+    layout_properties: {grid_position: 'HIQPSI,KCWVMY'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
