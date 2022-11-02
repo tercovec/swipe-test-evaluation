@@ -16,8 +16,8 @@ class main(mainTemplate):
     # self.label.content = response
     blank = self.loader_blank.file
     sample = self.loader_sample.file
-    anvil.server.call('transmit_files', blank, sample)
-    media_obj = anvil.server.call('make_plot')
+    media_obj = anvil.server.call('make_plot', blank, sample)
+    # media_obj = anvil.server.call('make_plot')
     self.image_1.source = media_obj
     self.download_link.url = media_obj
     
