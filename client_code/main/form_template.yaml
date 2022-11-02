@@ -1,0 +1,80 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: FileLoader
+    properties:
+      role: null
+      show_state: true
+      align: center
+      tooltip: ''
+      border: ''
+      file_types: null
+      enabled: true
+      files: []
+      foreground: ''
+      visible: true
+      text: upload blank
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      file: null
+      background: ''
+      bold: false
+      underline: false
+      multiple: false
+      icon: fa:upload
+    name: load_blank
+    layout_properties: {grid_position: 'ORRRXC,GSZZMI'}
+  - type: FileLoader
+    properties:
+      role: null
+      show_state: true
+      align: center
+      tooltip: ''
+      border: ''
+      file_types: null
+      enabled: true
+      files: []
+      foreground: ''
+      visible: true
+      text: upload samples
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      file: null
+      background: ''
+      bold: false
+      underline: false
+      multiple: false
+      icon: fa:upload
+    name: file_loader_1
+    layout_properties: {grid_position: 'ORRRXC,RHCHDD'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: generate graph, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: generate_graph
+    layout_properties: {grid_position: 'UHGLRB,PDMLUV'}
+    event_bindings: {click: generate_graph_click}
+  - type: RichText
+    properties: {}
+    name: label
+    layout_properties: {grid_position: 'PBFAYR,QTOAPO'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
