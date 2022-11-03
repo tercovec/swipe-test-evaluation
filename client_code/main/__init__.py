@@ -12,13 +12,22 @@ class main(mainTemplate):
 
   def generate_graph_click(self, **event_args):
     """This method is called when the button is clicked"""
-    # response = anvil.server.call('say_hi')
-    # self.label.content = response
     blank = self.loader_blank.file
-    sample = self.loader_sample.file
-    media_obj = anvil.server.call('make_plot', blank, sample)
-    # media_obj = anvil.server.call('make_plot')
+    samples = self.loader_sample.files
+    self.graph_repeating_panel.items = anvil.server.call('generate_graphs', blank, samples)
+    media_obj = anvil.server.call('generate_graphs', blank, samples)
     self.image_1.source = media_obj
     self.download_link.url = media_obj
+
+  def loader_blank_change(self, file, **event_args):
+    """This method is called when a new file is loaded into this FileLoader"""
+    self.lbl_blank_name.text = file.name
+
+  def loader_sample_change(self, file, **event_args):
+    """This method is called when a new file is loaded into this FileLoader"""
+    file_names = str([file.name for file in self.loader_sample.files])
+    self.lbl_sample_name.text = file_names
+
+
     
 
