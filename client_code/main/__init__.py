@@ -14,10 +14,10 @@ class main(mainTemplate):
     """This method is called when the button is clicked"""
     blank = self.loader_blank.file
     samples = self.loader_sample.files
-    self.graph_repeating_panel.items = anvil.server.call('generate_graphs', blank, samples)
-    media_obj = anvil.server.call('generate_graphs', blank, samples)
-    self.image_1.source = media_obj
-    self.download_link.url = media_obj
+    
+    self.graph_repeating_panel.items = [anvil.server.call('generate_graph', blank, sample) for sample in samples]
+    # media_obj = anvil.server.call('generate_graph', blank, samples)
+
 
   def loader_blank_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
