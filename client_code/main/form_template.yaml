@@ -9,9 +9,31 @@ components:
   layout_properties: {slot: default}
   components:
   - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Sample size, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'KUUZHX,IVFKGV'}
+    data_bindings: []
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '235.4', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: sample_size
+    layout_properties: {grid_position: 'KUUZHX,CTRNVH'}
+    data_bindings:
+    - {property: text, code: 'self.item[''area'']', writeback: true}
+  - type: Label
     properties: {}
     name: label_2
-    layout_properties: {grid_position: 'UKNMEJ,DZBKAH'}
+    layout_properties: {grid_position: 'PSRULQ,RLPITQ'}
+    data_bindings: []
+  - type: TextBox
+    properties: {}
+    name: text_box_2
+    layout_properties: {grid_position: 'PSRULQ,BDZXJA'}
   - type: FileLoader
     properties:
       role: null
@@ -113,3 +135,10 @@ components:
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
+- type: RichText
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+    foreground: '', visible: true, font_size: null, content: '# RGA cleanliness measurement',
+    font: '', spacing_above: small, spacing_below: small, data: null, background: '',
+    format: markdown}
+  name: title
+  layout_properties: {slot: title}

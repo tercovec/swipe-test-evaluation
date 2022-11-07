@@ -21,7 +21,7 @@ class main(mainTemplate):
     blank = self.loader_blank.file
     samples = self.loader_sample.files
     
-    self.graph_repeating_panel.items = [anvil.server.call('generate_graph', blank, sample) for sample in samples]
+    self.graph_repeating_panel.items = [anvil.server.call('generate_graph', blank, sample, area = self.item['area']) for sample in samples]
     # media_obj = anvil.server.call('generate_graph', blank, samples)
 
 
