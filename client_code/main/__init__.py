@@ -9,6 +9,10 @@ class main(mainTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    if not anvil.server.call('server_alive'):
+      self.server_status.text = "Server down"
+    else: self.server_status.text = "Server connection OK"
+    
 
   def generate_graph_click(self, **event_args):
     """This method is called when the button is clicked"""

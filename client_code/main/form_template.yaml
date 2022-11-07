@@ -8,6 +8,10 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - type: Label
+    properties: {}
+    name: label_2
+    layout_properties: {grid_position: 'UKNMEJ,DZBKAH'}
   - type: FileLoader
     properties:
       role: null
@@ -64,6 +68,13 @@ components:
     name: loader_sample
     layout_properties: {grid_position: 'ORRRXC,RHCHDD'}
     event_bindings: {change: loader_sample_change}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: server_status
+    layout_properties: {grid_position: 'ORRRXC,BLZKDA'}
   - type: Label
     properties: {}
     name: lbl_blank_name
