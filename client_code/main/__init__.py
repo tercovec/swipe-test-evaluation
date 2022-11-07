@@ -15,6 +15,8 @@ class main(mainTemplate):
     except anvil.server.UplinkDisconnectedError:
       self.server_status.text = "server disconnected"
 
+    self.item['area'] = 235.4
+
 
   def generate_graph_click(self, **event_args):
     """This method is called when the button is clicked"""
