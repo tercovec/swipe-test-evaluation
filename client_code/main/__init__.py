@@ -21,7 +21,6 @@ class main(mainTemplate):
 
   def generate_graph_click(self, **event_args):
     """This method is called when the button is clicked"""
-    print(self.item['area'])
     blank = self.loader_blank.file
     samples = self.loader_sample.files
     
@@ -41,6 +40,7 @@ class main(mainTemplate):
       self.loader_blank.role = 'elevated-button'
       self.lbl_blank_name.text = 'no blank file selected'
       self.blank_OK = False
+      self.generate_graph.enabled = False
 
   def loader_sample_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
@@ -51,9 +51,10 @@ class main(mainTemplate):
       if self.sample_OK and self.blank_OK:
         self.generate_graph.enabled = True
     else:
-      self.loader_blank.role = 'elevated-button'
-      self.lbl_blank_name.text = 'no SAMPLE files selected'
+      self.loader_sample.role = 'elevated-button'
+      self.lbl_sample_name.text = 'no SAMPLE files selected'
       self.sample_OK = False
+      self.generate_graph.enabled = False
       
 
     

@@ -25,6 +25,10 @@ components:
     layout_properties: {grid_position: 'KUUZHX,BQWCYA'}
     data_bindings:
     - {property: text, code: 'self.item[''area'']', writeback: true}
+  - type: DatePicker
+    properties: {}
+    name: date_picker_1
+    layout_properties: {grid_position: 'PSRULQ,ZZQJFB'}
   - type: Label
     properties: {}
     name: label_2
