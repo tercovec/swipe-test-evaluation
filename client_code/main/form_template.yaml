@@ -22,7 +22,7 @@ components:
       font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
       background: '', bold: false, underline: false}
     name: sample_size
-    layout_properties: {grid_position: 'KUUZHX,CTRNVH'}
+    layout_properties: {grid_position: 'KUUZHX,BQWCYA'}
     data_bindings:
     - {property: text, code: 'self.item[''area'']', writeback: true}
   - type: Label
@@ -104,7 +104,7 @@ components:
       spacing_below: small, italic: false, background: '', bold: false, underline: false,
       icon: ''}
     name: server_status
-    layout_properties: {grid_position: 'ORRRXC,BLZKDA'}
+    layout_properties: {grid_position: 'ORRRXC,IUJQYS'}
   - type: Label
     properties: {}
     name: lbl_blank_name

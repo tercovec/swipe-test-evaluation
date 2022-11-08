@@ -16,7 +16,7 @@ class main(mainTemplate):
     except anvil.server.UplinkDisconnectedError:
       self.server_status.text = "backend disconnected"
       self.server_status.background = 'red'
-
+    self.item['area'] = 234.5
     self.sample_size.text = 234.5
 
   def generate_graph_click(self, **event_args):
