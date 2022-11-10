@@ -47,7 +47,14 @@ class main(mainTemplate):
     """This method is called when a new file is loaded into this FileLoader"""
     if self.loader_sample.file is not None:
       self.loader_sample.role = 'tonal-button'
-      self.lbl_sample_name.text = str([file.name for file in self.loader_sample.files])
+      def generate_filename_markdown(files):
+        md = ''
+        for _ , file in enumerate(files):
+          md += str(_) +'. ' + str(file.name) + '\n'
+        return md
+            
+        
+      self.lbl_sample_name.content = generate_filename_markdown(self.loader_sample.files)
       self.sample_OK = True
       if self.sample_OK and self.blank_OK:
         self.generate_graph.enabled = True

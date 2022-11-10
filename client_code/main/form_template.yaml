@@ -8,39 +8,10 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Sample size, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_1
-    layout_properties: {grid_position: 'KUUZHX,IVFKGV'}
-    data_bindings: []
-  - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '235.4',
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false}
-    name: sample_size
-    layout_properties: {grid_position: 'KUUZHX,BQWCYA'}
-    data_bindings:
-    - {property: text, code: 'self.item[''area'']', writeback: true}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: date, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_2
-    layout_properties: {grid_position: 'PSRULQ,ZRWMUO'}
-  - type: DatePicker
-    properties: {role: null, align: left, max_date: '', pick_time: false, tooltip: '',
-      placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: null,
-      font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
-      min_date: '', background: '', bold: false, underline: false, format: ''}
-    name: date_picker
-    layout_properties: {grid_position: 'PSRULQ,ZZQJFB'}
-    data_bindings:
-    - {property: date, code: 'self.item[''date'']', writeback: true}
+  - type: RichText
+    properties: {}
+    name: lbl_sample_name
+    layout_properties: {grid_position: 'QOMDCW,HCBSMD KUGXWZ,XXNRKC'}
   - type: FileLoader
     properties:
       role: elevated-button
@@ -67,8 +38,23 @@ components:
       multiple: false
       icon: fa:upload
     name: loader_blank
-    layout_properties: {grid_position: 'ORRRXC,XHWWYA'}
+    layout_properties: {grid_position: 'QOMDCW,HCBSMD XDPUFC,LMPMQB'}
     event_bindings: {change: loader_blank_change}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Sample size, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'QOMDCW,OZWZRA NMLLCO,TLBGHD'}
+    data_bindings: []
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: date, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'QOMDCW,OZWZRA TFDZPR,FQBNJN'}
   - type: FileLoader
     properties:
       role: elevated-button
@@ -95,31 +81,45 @@ components:
       multiple: true
       icon: fa:upload
     name: loader_sample
-    layout_properties: {grid_position: 'ORRRXC,RHCHDD'}
+    layout_properties: {grid_position: 'QOMDCW,OZWZRA ZDARXK,WEXNIB'}
     event_bindings: {change: loader_sample_change}
-  - type: Button
-    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: false,
-      foreground: '', visible: true, text: generate graphs, font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
-    name: generate_graph
-    layout_properties: {grid_position: 'ORRRXC,GPKJKT'}
-    event_bindings: {click: generate_graph_click}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '235.4',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: sample_size
+    layout_properties: {grid_position: 'QOMDCW,IYDCNG CLOMLS,ZSFRQR'}
+    data_bindings:
+    - {property: text, code: 'self.item[''area'']', writeback: true}
+  - type: DatePicker
+    properties: {role: null, align: left, max_date: '', pick_time: false, tooltip: '',
+      placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: null,
+      font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
+      min_date: '', background: '', bold: false, underline: false, format: ''}
+    name: date_picker
+    layout_properties: {grid_position: 'QOMDCW,IYDCNG OGNPFA,TFYFQB'}
+    data_bindings:
+    - {property: date, code: 'self.item[''date'']', writeback: true}
+  - type: Label
+    properties: {}
+    name: lbl_blank_name
+    layout_properties: {grid_position: 'QOMDCW,IYDCNG IRXSOB,WFIDFX'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
       spacing_below: small, italic: false, background: '', bold: false, underline: false,
       icon: ''}
     name: server_status
-    layout_properties: {grid_position: 'ORRRXC,IUJQYS'}
-  - type: Label
-    properties: {}
-    name: lbl_blank_name
-    layout_properties: {grid_position: 'EVHHQC,BIBRRW'}
-  - type: Label
-    properties: {}
-    name: lbl_sample_name
-    layout_properties: {grid_position: 'EVHHQC,BCDSFR'}
+    layout_properties: {grid_position: 'QOMDCW,ZXPAQK SEJACL,ZQYNDR'}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: false,
+      foreground: '', visible: true, text: generate graphs, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: generate_graph
+    layout_properties: {grid_position: 'QOMDCW,ZXPAQK EYECRY,OJKVRU'}
+    event_bindings: {click: generate_graph_click}
   - type: Spacer
     properties: {height: 32}
     name: spacer_1
