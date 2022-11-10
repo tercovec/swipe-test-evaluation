@@ -35,7 +35,7 @@ components:
   - type: DatePicker
     properties: {role: null, align: left, max_date: '', pick_time: false, tooltip: '',
       placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: null,
-      font: '', spacing_above: small, spacing_below: small, italic: false, date: now,
+      font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
       min_date: '', background: '', bold: false, underline: false, format: ''}
     name: date_picker
     layout_properties: {grid_position: 'PSRULQ,ZZQJFB'}

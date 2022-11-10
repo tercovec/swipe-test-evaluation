@@ -4,6 +4,7 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from datetime import date
 
 class main(mainTemplate):
   def __init__(self, **properties):
@@ -16,14 +17,15 @@ class main(mainTemplate):
     except anvil.server.UplinkDisconnectedError:
       self.server_status.text = "backend disconnected"
       self.server_status.background = 'red'
-    self.item['area'] = self.sample_size.placeholder
+    self.item['area'] = float(self.sample_size.placeholder)
+    self.item['date'] = date.today()
 
   def generate_graph_click(self, **event_args):
     """This method is called when the button is clicked"""
     blank = self.loader_blank.file
     samples = self.loader_sample.files
     
-    self.graph_repeating_panel.items = [anvil.server.call('generate_graph', blank, sample, area = self.item['area']) for sample in samples]
+    self.graph_repeating_panel.items = [anvil.server.call('generate_graph', blank, sample, area = self.item['area'], datum = str(self.item['date'])) for sample in samples]
     # media_obj = anvil.server.call('generate_graph', blank, samples)
 
 
