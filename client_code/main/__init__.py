@@ -13,9 +13,9 @@ class main(mainTemplate):
     self.sample_OK, self.blank_OK = False, False
     try:
       anvil.server.call('server_alive')
-      self.server_status.text = "server OK"
+      self.server_status.text = "backend: OK"
     except anvil.server.UplinkDisconnectedError:
-      self.server_status.text = "backend disconnected"
+      self.server_status.text = "backend uplink: DOWN"
       self.server_status.background = 'red'
     self.item['area'] = float(self.sample_size.placeholder)
     self.item['date'] = date.today()
