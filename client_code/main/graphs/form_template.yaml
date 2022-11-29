@@ -9,7 +9,7 @@ components:
     source: '', spacing_below: small, background: '', horizontal_align: center}
   name: graph_image
   layout_properties: {grid_position: 'ZVKGWV,JTDNTQ'}
-  event_bindings: {}
+  event_bindings: {mouse_down: graph_image_mouse_down}
 - type: Link
   properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: '',
     visible: true, text: download, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,

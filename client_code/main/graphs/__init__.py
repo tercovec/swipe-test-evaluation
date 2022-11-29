@@ -13,6 +13,11 @@ class graphs(graphsTemplate):
     self.graph_image.source = self.item
     # Any code you write here will run when the form opens.
 
+  def graph_image_mouse_down(self, x, y, button, **event_args):
+    """This method is called when a mouse button is pressed on this component"""
+    self.graph_image.download()
+
+
 
 
 
