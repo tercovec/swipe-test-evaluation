@@ -9,7 +9,7 @@ class graphs(graphsTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.download_link.url = self.item
+    # self.download_link.url = self.item
     self.graph_image.source = self.item
     # Any code you write here will run when the form opens.
 
