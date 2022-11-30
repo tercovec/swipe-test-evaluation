@@ -15,8 +15,8 @@ class graphs(graphsTemplate):
 
   def graph_image_mouse_down(self, x, y, button, **event_args):
     """This method is called when a mouse button is pressed on this component"""
-    self.graph_image.download()
-
+    # self.graph_image.download()
+    pass
 
 
 
