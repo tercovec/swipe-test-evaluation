@@ -5,7 +5,7 @@ container:
 components:
 - type: Image
   properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '',
-    foreground: '', visible: true, display_mode: original_size, spacing_above: small,
+    foreground: '', visible: true, display_mode: fill_width, spacing_above: small,
     source: '', spacing_below: small, background: '', horizontal_align: center}
   name: graph_image
   layout_properties: {grid_position: 'ZVKGWV,JTDNTQ'}
