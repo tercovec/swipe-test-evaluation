@@ -5,6 +5,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from datetime import date
+import anvil.media
 
 class main(mainTemplate):
   def __init__(self, **properties):
@@ -63,6 +64,11 @@ class main(mainTemplate):
       self.lbl_sample_name.text = 'no SAMPLE files selected'
       self.sample_OK = False
       self.generate_graph.enabled = False
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pdf_file = anvil.server.call('create_pdf', 'main')
+    anvil.media.download(pdf_file)
       
 
     
