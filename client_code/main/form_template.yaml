@@ -144,9 +144,9 @@ components:
   name: navbar_links
   layout_properties: {slot: nav-right}
 - type: RichText
-  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-    foreground: '', visible: true, font_size: null, content: '## RGA cleanliness measurement',
-    font: '', spacing_above: small, spacing_below: small, data: null, background: '',
-    format: markdown}
+  properties: {role: null, align: center, tooltip: '', enable_slots: true, border: '',
+    foreground: '', visible: true, font_size: null, content: '## ELI Cleanliness Swipe
+      Evaluation', font: '', spacing_above: small, spacing_below: small, data: null,
+    background: 'theme:On Primary', format: markdown}
   name: title
   layout_properties: {slot: title}
