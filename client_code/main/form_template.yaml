@@ -145,8 +145,8 @@ components:
   layout_properties: {slot: nav-right}
 - type: RichText
   properties: {role: null, align: center, tooltip: '', enable_slots: true, border: '',
-    foreground: '', visible: true, font_size: null, content: '## ELI Cleanliness Swipe
-      Evaluation', font: '', spacing_above: small, spacing_below: small, data: null,
-    background: 'theme:On Primary', format: markdown}
+    foreground: '', visible: true, font_size: null, content: '## ELI Swipe Test Evaluation',
+    font: '', spacing_above: small, spacing_below: small, data: null, background: 'theme:On
+      Primary', format: markdown}
   name: title
   layout_properties: {slot: title}
