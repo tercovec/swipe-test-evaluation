@@ -4,12 +4,12 @@ services:
   client_config: {}
   server_config: {}
 startup: {type: form, module: main}
-package_name: Cleanliness_ELI
+package_name: Swipe_test_evaluation_for_ELI_Beamlines
 allow_embedding: false
-name: Cleanliness ELI
+name: Swipe test evaluation for ELI Beamlines
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-metadata: {title: Cleanliness ELI}
+metadata: {title: Swipe test evaluation, logo_img: 'asset:eli-logo.png'}
 startup_form: null
 db_schema: {}
 uplink_visible: true
