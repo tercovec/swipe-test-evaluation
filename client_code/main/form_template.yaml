@@ -43,9 +43,9 @@ components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Backend: if not OK, restart iso5lab.eli-beams.eu and eventually
-        start the cleanliness-connect.service via systemctl', font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
+        start the cleanliness-connect.service via sudo systemctl start cleanliness-connect.service',
+      font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
     name: label_4
     layout_properties: {grid_position: 'QOMDCW,HLOCCF OAEJDA,ZFWMEP'}
   - type: Label
