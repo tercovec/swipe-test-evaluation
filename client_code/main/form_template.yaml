@@ -131,6 +131,33 @@ components:
     properties: {}
     name: label_1
     layout_properties: {grid_position: 'MSQVQD,LGDCTQ'}
+  - type: FileLoader
+    properties:
+      role: null
+      show_state: true
+      align: center
+      tooltip: ''
+      border: ''
+      file_types: capture=camera
+      enabled: true
+      files: []
+      foreground: ''
+      visible: true
+      text: test button
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      file: null
+      background: ''
+      bold: false
+      underline: false
+      multiple: false
+      icon: fa:upload
+    name: file_loader_1
+    layout_properties: {grid_position: 'PFNBIC,RHBQMD'}
   - type: Spacer
     properties: {height: 32}
     name: spacer_1
