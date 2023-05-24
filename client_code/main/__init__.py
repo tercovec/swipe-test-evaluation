@@ -15,7 +15,7 @@ class main(mainTemplate):
     try:
       anvil.server.call('server_alive')
       self.server_status.text = "backend: OK"
-    except anvil.server.UplinkDisconnectedError:
+    except: # anvil.server.UplinkDisconnectedError or anvil.server.NoServerFunctionError:
       self.server_status.text = "backend uplink: DOWN"
       self.server_status.background = 'red'
     self.item['area'] = float(self.sample_size.placeholder)
