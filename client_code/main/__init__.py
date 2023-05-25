@@ -1,5 +1,7 @@
 from ._anvil_designer import mainTemplate
 from anvil import *
+import anvil.google.auth, anvil.google.drive
+from anvil.google.drive import app_files
 import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
@@ -65,10 +67,10 @@ class main(mainTemplate):
       self.sample_OK = False
       self.generate_graph.enabled = False
 
-  def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    pdf_file = anvil.server.call('create_pdf', 'main')
-    anvil.media.download(pdf_file)
+  def file_loader_1_change(self, file, **event_args):
+    """This method is called when a new file is loaded into this FileLoader"""
+    pass
+
       
 
     
