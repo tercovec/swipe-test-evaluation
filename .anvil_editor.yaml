@@ -5,6 +5,8 @@ unique_ids:
   modules: {}
   server_modules:
     ServerModule1: '1670362079468915295441886.7234'
+    helpers: '1685015539446289554784225.9416'
+    imagesmodule: '1685014702790973258238101.8853'
   assets:
     eli-logo.png: '1675696727261599992639081.0637'
     standard-page.html: PPWZKOTNOHB7FRTX5X3KTJNZAAZJOSTF

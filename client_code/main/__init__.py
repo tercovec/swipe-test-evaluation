@@ -71,6 +71,16 @@ class main(mainTemplate):
     """This method is called when a new file is loaded into this FileLoader"""
     pass
 
+  def mail_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call('send_mail')
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call('get_b64string')
+
+
+
       
 
     
