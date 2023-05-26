@@ -10,19 +10,7 @@ sample_string_bytes = sample_string.encode("ascii")
 base64_bytes = base64.b64encode(sample_string_bytes)
 base64_string = base64_bytes.decode("ascii")
 
-@anvil.server.callable
-def get_b64string():
-  return base64_string
+def get_b64string(image):
+  encoded = base64.b64encode(image)
+  return encoded.decode("ascii")
 
-# This is a server module. It runs on the Anvil server,
-# rather than in the user's browser.
-#
-# To allow anvil.server.call() to call functions here, we mark
-# them with @anvil.server.callable.
-# Here is an example - you can replace it with your own:
-#
-# @anvil.server.callable
-# def say_hello(name):
-#   print("Hello, " + name + "!")
-#   return 42
-#

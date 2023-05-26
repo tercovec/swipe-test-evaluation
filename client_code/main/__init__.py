@@ -56,7 +56,6 @@ class main(mainTemplate):
           md += str(_) +'. ' + str(file.name) + '\n'
         return md
             
-        
       self.lbl_sample_name.content = generate_filename_markdown(self.loader_sample.files)
       self.sample_OK = True
       if self.sample_OK and self.blank_OK:
@@ -67,13 +66,13 @@ class main(mainTemplate):
       self.sample_OK = False
       self.generate_graph.enabled = False
 
-  def file_loader_1_change(self, file, **event_args):
-    """This method is called when a new file is loaded into this FileLoader"""
-    pass
-
   def mail_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('send_mail')
+    graphs = self.graph_repeating_panel.get_components()
+    source_data = []
+    for graph in graphs:
+      source_data.append(graph.graph_image.source)
+    anvil.server.call('send_mail', source_data)
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""

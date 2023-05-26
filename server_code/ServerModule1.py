@@ -4,6 +4,7 @@ from anvil.google.drive import app_files
 import anvil.server
 import anvil.pdf
 from imagesmodule import imageb64
+import helpers
 
 @anvil.server.callable
 def create_pdf(form):
@@ -11,13 +12,19 @@ def create_pdf(form):
   return media_object
 
 @anvil.server.callable
-def send_mail():
+def send_mail(images):
+  def image_tag(images):
+    tag = ''
+    for image in images:
+      tag += f'<img alt="My Image" src="data:image/jpeg;base64,{helpers.get_b64string(image.get_bytes())}" /></br>'
+    return tag
+    
   anvil.google.mail.send(
    from_address = "Bis User <bisuserbt@gmail.com>",
    to = "petr.zimmermann@eli-beams.eu",
    subject = "TestMail",
    html =
-   f"""Dear all, <p>There will be a meeting today at <b>5pm</b>. <p>Best regards, <p>Petr <img alt="My Image" src="data:image/jpeg;base64,{imageb64}" /> """)
+   f"""Best regards, <p>Petr<p> {image_tag(images)}" /> """)
   
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
