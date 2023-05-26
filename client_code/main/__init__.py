@@ -21,6 +21,8 @@ class main(mainTemplate):
       self.server_status.text = "backend uplink: DOWN"
       self.server_status.background = 'red'
     self.item['area'] = float(self.sample_size.placeholder)
+    self.item['sample_volume'] = float(self.sample_volume.placeholder)
+    self.item['blank_volume'] = float(self.blank_volume.placeholder)
     self.item['date'] = date.today()
 
   def generate_graph_click(self, **event_args):
@@ -28,7 +30,7 @@ class main(mainTemplate):
     blank = self.loader_blank.file
     samples = self.loader_sample.files
     
-    self.graph_repeating_panel.items = [anvil.server.call('generate_graph', blank, sample, area = self.item['area'], datum = str(self.item['date'])) for sample in samples]
+    self.graph_repeating_panel.items = [anvil.server.call('generate_graph', blank, sample, area = self.item['area'], sample_volume = self.item['sample_volume'], blank_volume = self.item['blank_volume'], datum = str(self.item['date'])) for sample in samples]
     # media_obj = anvil.server.call('generate_graph', blank, samples)
 
 
@@ -73,10 +75,6 @@ class main(mainTemplate):
     for graph in graphs:
       source_data.append(graph.graph_image.source)
     anvil.server.call('send_mail', source_data)
-
-  def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    anvil.server.call('get_b64string')
 
 
 
