@@ -131,6 +131,14 @@ components:
     properties: {}
     name: label_1
     layout_properties: {grid_position: 'MSQVQD,LGDCTQ'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Send Mail (testing), font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: 'fa:envelope'}
+    name: mail_button
+    layout_properties: {grid_position: 'YDZEEI,TTXQGG'}
+    event_bindings: {click: mail_button_click}
   - type: Spacer
     properties: {height: 32}
     name: spacer_1
@@ -139,23 +147,6 @@ components:
     properties: {item_template: main.graphs}
     name: graph_repeating_panel
     layout_properties: {grid_position: 'PGLTMR,GYHORJ'}
-  - type: Button
-    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Send Mail (testing), font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: 'fa:envelope'}
-    name: mail_button
-    layout_properties: {grid_position: 'EYHJPF,DYBPZD'}
-    event_bindings: {click: mail_button_click}
-  - type: Button
-    properties: {text: button_1}
-    name: button_1
-    layout_properties: {grid_position: 'FMXSFI,LBAPGZ'}
-    event_bindings: {click: button_1_click}
-  - type: TextBox
-    properties: {}
-    name: output
-    layout_properties: {grid_position: 'CFWBNO,OHJOFG'}
 - type: FlowPanel
   properties: {}
   name: navbar_links

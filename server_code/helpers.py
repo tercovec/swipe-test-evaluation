@@ -3,14 +3,8 @@ from anvil.google.drive import app_files
 import anvil.server
 import base64
 
-
-sample_string = "GeeksForGeeks is the best"
-sample_string_bytes = sample_string.encode("ascii")
-  
-base64_bytes = base64.b64encode(sample_string_bytes)
-base64_string = base64_bytes.decode("ascii")
-
-def get_b64string(image):
-  encoded = base64.b64encode(image)
+def get_b64string(file):
+  """this function provides a base64 encoded file and prints it as ASCII characters. It is used for embedding an image directlo the mail content"""
+  encoded = base64.b64encode(file)
   return encoded.decode("ascii")
 
