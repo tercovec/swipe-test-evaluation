@@ -29,13 +29,6 @@ components:
       background: '', bold: false, underline: false, icon: ''}
     name: label_6
     layout_properties: {grid_position: 'QOMDCW,OWROTR QMNJYP,FHJVHP'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: date (if not today), font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_2
-    layout_properties: {grid_position: 'QOMDCW,OWROTR MGQQYH,HXWWYQ'}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: Swipe area. Default value is 4.4 x 60 cm = 264 cm2,
       placeholder: '264', border: '', enabled: true, foreground: '', visible: true,
@@ -65,13 +58,21 @@ components:
     - {property: text, code: 'self.item[''blank_volume'']', writeback: true}
   - type: DatePicker
     properties: {role: null, align: left, max_date: '', pick_time: false, tooltip: '',
-      placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: null,
-      font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
-      min_date: '', background: '', bold: false, underline: false, format: ''}
+      placeholder: date (if not today), border: '', enabled: true, foreground: '',
+      visible: true, font_size: null, font: '', spacing_above: small, spacing_below: small,
+      italic: false, date: '', min_date: '', background: '', bold: false, underline: false,
+      format: ''}
     name: date_picker
     layout_properties: {grid_position: 'QOMDCW,IYDCNG OGNPFA,TFYFQB'}
     data_bindings:
     - {property: date, code: 'self.item[''date'']', writeback: true}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: server_status
+    layout_properties: {grid_position: 'QOMDCW,HLOCCF XQFFZF,VFKBRD'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Backend: if not OK, restart iso5lab.eli-beams.eu and eventually
@@ -80,13 +81,6 @@ components:
       italic: false, background: '', bold: false, underline: false, icon: ''}
     name: label_4
     layout_properties: {grid_position: 'QOMDCW,HLOCCF OAEJDA,ZFWMEP'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: server_status
-    layout_properties: {grid_position: 'QOMDCW,HLOCCF URIWGX,SKTWIO'}
   - type: FileLoader
     properties:
       role: elevated-button
