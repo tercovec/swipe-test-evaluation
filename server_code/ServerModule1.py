@@ -15,8 +15,9 @@ def send_mail(images):
     
   anvil.google.mail.send(
    from_address = "ELI Bis User <bisuserbt@gmail.com>",
-   to = ["petr.zimmermann@eli-beams.eu", "david.modransky@eli-beams.eu"],
+   to = ["david.modransky@eli-beams.eu", "petr.pospisil@eli-beams.eu"],
+   cc = ["frantisek.vanek@eli-beams.eu", "petr.zimmermann@eli-beams.eu"],
    subject = "ELI Swipe Results",
    html =
-   f"""Swipe results <p>Petr<p> {image_tag(images)} """)
+   f"""Swipe results from Eli Swipe Test https://eli-swipe.anvil.app<p>Petr<p> {image_tag(images)} """)
   
