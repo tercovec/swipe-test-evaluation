@@ -8,6 +8,10 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_2
+    layout_properties: {slot: title, grid_position: 'UGQSUS,JYJWIX'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: sample area in cm2 (default 264), font_size: null, font: '',
@@ -81,6 +85,13 @@ components:
       italic: false, background: '', bold: false, underline: false, icon: ''}
     name: label_4
     layout_properties: {grid_position: 'QOMDCW,HLOCCF OAEJDA,ZFWMEP'}
+  - type: Label
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+      visible: true, text: Developed by Petr Zimmermann, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: true,
+      background: '', bold: false, underline: false, icon: ''}
+    name: label_7
+    layout_properties: {grid_position: 'QOMDCW,HLOCCF EYVCQM,EFTYRS'}
   - type: FileLoader
     properties:
       role: elevated-button
@@ -177,10 +188,10 @@ components:
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
-- type: RichText
-  properties: {role: null, align: center, tooltip: '', enable_slots: true, border: '',
-    foreground: '', visible: true, font_size: null, content: '## ELI Swipe Test Evaluation',
-    font: '', spacing_above: small, spacing_below: small, data: null, background: 'theme:On
-      Primary', format: markdown}
-  name: title
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: ISO5 LAB @ ELI Swipe test evaluation, font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false, icon: ''}
+  name: label_2
   layout_properties: {slot: title}
