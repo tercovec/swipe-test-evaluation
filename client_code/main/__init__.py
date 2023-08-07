@@ -74,7 +74,12 @@ class main(mainTemplate):
     source_data = []
     for graph in graphs:
       source_data.append(graph.graph_image.source)
-    anvil.server.call('send_mail', source_data)
+    try:
+      anvil.server.call('send_mail', source_data)
+    except:
+      alert('something went wrong :-)')
+    else:
+      alert('Email sent')
 
 
 
