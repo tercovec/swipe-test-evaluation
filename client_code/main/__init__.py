@@ -73,7 +73,7 @@ class main(mainTemplate):
     graphs = self.graph_repeating_panel.get_components()
     source_data = []
     for graph in graphs:
-      source_data.append(graph.graph_image.source)
+      source_data.append((graph.graph_image.source, graph.graph_description))
     try:
       anvil.server.call('send_mail', source_data)
     except:
