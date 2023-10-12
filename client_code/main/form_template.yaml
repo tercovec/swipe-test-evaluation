@@ -180,6 +180,14 @@ components:
       data: null, background: '', format: markdown}
     name: rich_text_1
     layout_properties: {grid_position: 'BSFFCH,THMGYP'}
+    components:
+    - type: TextArea
+      properties: {role: null, align: center, height: '', tooltip: '', placeholder: Here you can add a project description for use in the email report,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        auto_expand: false, font: '', spacing_above: small, spacing_below: small,
+        italic: false, background: '', bold: true, underline: false}
+      name: project_description
+      layout_properties: {}
   - type: Spacer
     properties: {height: 32}
     name: spacer_1

@@ -73,9 +73,9 @@ class main(mainTemplate):
     graphs = self.graph_repeating_panel.get_components()
     source_data = []
     for graph in graphs:
-      source_data.append((graph.graph_image.source, graph.graph_description))
+      source_data.append((graph.graph_image.source, graph.graph_description.text))
     try:
-      anvil.server.call('send_mail', source_data)
+      anvil.server.call('send_mail', source_data, self.project_description.text)
     except:
       alert('something went wrong :-)')
     else:
