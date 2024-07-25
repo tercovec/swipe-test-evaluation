@@ -4,17 +4,12 @@ container:
   data_bindings: []
 components:
 - type: Image
-  properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '',
-    foreground: '', visible: true, display_mode: fill_width, spacing_above: small,
-    source: '', spacing_below: small, background: '', horizontal_align: center}
+  properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '', foreground: '', visible: true, display_mode: fill_width, spacing_above: small, source: '', spacing_below: small, background: '', horizontal_align: center}
   name: graph_image
   layout_properties: {grid_position: 'ZVKGWV,JTDNTQ'}
   event_bindings: {mouse_down: graph_image_mouse_down}
 - type: TextArea
-  properties: {role: null, align: left, height: '', tooltip: '', placeholder: Graph description,
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-    auto_expand: false, font: '', spacing_above: small, spacing_below: small, italic: false,
-    background: '', bold: true, underline: false}
+  properties: {role: null, align: left, height: '', tooltip: '', placeholder: Graph description, border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null, auto_expand: false, font: '', spacing_above: small, spacing_below: small, italic: false, background: '', bold: true, underline: false}
   name: graph_description
   layout_properties: {grid_position: 'NYWLHX,VSESJQ'}
   event_bindings: {change: text_area_1_change}

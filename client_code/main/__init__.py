@@ -30,7 +30,7 @@ class main(mainTemplate):
     blank = self.loader_blank.file
     samples = self.loader_sample.files
     
-    self.graph_repeating_panel.items = [anvil.server.call('generate_graph', blank, sample, area = self.item['area'], sample_volume = self.item['sample_volume'], blank_volume = self.item['blank_volume'], datum = str(self.item['date'])) for sample in samples]
+    self.graph_repeating_panel.items = [anvil.server.call('generate_graph', blank, sample, area = (self.item['area'] or self.sample_size.placeholder), sample_volume = (self.item['sample_volume'] or self.sample_volume.placeholder), blank_volume = (self.item['blank_volume'] or self.blank_volume.placeholder), datum = str(self.item['date'])) for sample in samples]
     # media_obj = anvil.server.call('generate_graph', blank, samples)
 
 
