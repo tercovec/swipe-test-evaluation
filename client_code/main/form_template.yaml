@@ -139,10 +139,7 @@ components:
       format: markdown
       align: left
       spacing_above: small
-      content: |-
-        #### What's new? 21-9-2023:
-        * ==description works== Description of the graphs is now included in Emails. Use it for additional description (optional)
-        * ==send button== moved to the bottom
+      content: "#### What's new? 01-08-2024: \n* some bughuting done"
       background: ''
       font: ''
       foreground: ''
