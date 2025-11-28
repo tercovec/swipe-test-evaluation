@@ -1,22 +1,22 @@
-dependencies: []
-services:
-- source: /runtime/services/tables.yml
-  client_config: {}
-  server_config: {}
-- source: /runtime/services/google.yml
-  client_config: {}
-  server_config: {enc_delegation_refresh_token: f6QYNU4gWOyHXr8725DrqSw1e07snIvvpYcGxQlRD4WBUQvmqVAqTbDXW68iLt/ODbPmTM1yKnNQ7tE8FYbKlw8sJYoSjQ/k+lcGAS8WfHcsRM2Gmxg0Xu72BVQnnY/5SeDA8zK2u3GpKNeFAR2zda2703rdsNnL97zr8MRFzf1vfsA/gWZDx3Uhg5zcHhS9VYNf0V7XtMRZgF+PjKseDmhEOPVliytGyOoXmhk0sqz/iojTojL3FqZwLvoW5iozeasGSySVs9yzJedLPAip7MdrFbgYQVISf7FzDwh8/qmY4I/wd8HRZIIl3s4LTw==}
-startup: {type: form, module: main}
-package_name: Swipe_test_evaluation_for_ELI_Beamlines
 allow_embedding: false
-name: Swipe test evaluation for ELI Beamlines
-runtime_options:
-  version: 2
-  client_version: '3'
-  server_version: python3-sandbox
-  server_spec: {base: python310-datascience}
-metadata: {title: Swipe test evaluation, logo_img: 'asset:eli-logo.png'}
-startup_form: null
 db_schema: {}
-uplink_visible: true
+dependencies: []
+metadata: {logo_img: 'asset:eli-logo.png', title: Swipe test evaluation}
+name: Swipe test evaluation for ELI Beamlines
+package_name: Swipe_test_evaluation_for_ELI_Beamlines
 renamed: true
+runtime_options:
+  client_version: '3'
+  server_spec: {base: python310-datascience}
+  server_version: python3-sandbox
+  version: 2
+services:
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/tables.yml
+- client_config: {}
+  server_config: {enc_delegation_refresh_token: UIzdsE7DXihM+ok6hdEuTE3CaVkYza6C7HaY4N4leXK72ZS4LTCYMlpGSg+tQuVJ9UxvKIomqz25ur3KXuRP7B4oZ6IT2uk/pI4jz/FlZM3TlWzAdt1i+3ZRvvYH+Ac19Y96LywAFdpOzXKMjEugFEvNI7QvUV094/Jwisd07OEKDIGvRbtMMG0T/O7Sv2VaBs8kOQjvQAttwSjWkcwoROsqSk85lOPC3Ic3k0iVPu0pQcXOBWLJ/8s/250MNBIKuhozj2cgpF8oEJs3EWcTOtnxmeOVW2noEfwccPEpux/RHxingj+cQ+36KENvnA==}
+  source: /runtime/services/google.yml
+startup: {module: main, type: form}
+startup_form: null
+uplink_visible: true

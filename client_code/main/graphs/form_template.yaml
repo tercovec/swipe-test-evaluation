@@ -1,17 +1,17 @@
-container:
-  type: ColumnPanel
-  properties: {col_widths: '{}'}
-  data_bindings: []
-components:
-- type: Image
-  properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '', foreground: '', visible: true, display_mode: fill_width, spacing_above: small, source: '', spacing_below: small, background: '', horizontal_align: center}
-  name: graph_image
-  layout_properties: {grid_position: 'ZVKGWV,JTDNTQ'}
-  event_bindings: {mouse_down: graph_image_mouse_down}
-- type: TextArea
-  properties: {role: null, align: left, height: '', tooltip: '', placeholder: Graph description, border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null, auto_expand: false, font: '', spacing_above: small, spacing_below: small, italic: false, background: '', bold: true, underline: false}
-  name: graph_description
-  layout_properties: {grid_position: 'NYWLHX,VSESJQ'}
-  event_bindings: {change: text_area_1_change}
-is_package: true
 component: []
+components:
+- event_bindings: {mouse_down: graph_image_mouse_down}
+  layout_properties: {grid_position: 'ZVKGWV,JTDNTQ'}
+  name: graph_image
+  properties: {background: '', border: '', display_mode: fill_width, foreground: '', height: '200', horizontal_align: center, role: null, source: '', spacing_above: small, spacing_below: small, tooltip: '', vertical_align: center, visible: true}
+  type: Image
+- event_bindings: {change: text_area_1_change}
+  layout_properties: {grid_position: 'NYWLHX,VSESJQ'}
+  name: graph_description
+  properties: {align: left, auto_expand: false, background: '', bold: true, border: '', enabled: true, font: '', font_size: null, foreground: '', height: '', italic: false, placeholder: Graph description, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+  type: TextArea
+container:
+  data_bindings: []
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+is_package: true

@@ -1,180 +1,180 @@
-is_package: true
-container:
-  type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
 components:
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: content_panel
-  layout_properties: {slot: default}
-  components:
-  - type: Spacer
-    properties: {height: 32}
+- components:
+  - layout_properties: {grid_position: 'UGQSUS,JYJWIX', slot: title}
     name: spacer_2
-    layout_properties: {slot: title, grid_position: 'UGQSUS,JYJWIX'}
-  - type: Label
-    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: sample area in cm2 (default 264)}
-    name: label_3
-    layout_properties: {grid_position: 'QOMDCW,OWROTR FXGBQX,IEOTVQ'}
-  - type: Label
-    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: sample efficiency (default 0.3)}
-    name: label_5
-    layout_properties: {grid_position: 'QOMDCW,OWROTR TYKQVP,OIGZWS'}
-  - type: Label
-    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: blank efficiency (default 0.3)}
-    name: label_6
-    layout_properties: {grid_position: 'QOMDCW,OWROTR QMNJYP,FHJVHP'}
-  - type: TextBox
-    properties: {role: null, bold: false, align: left, placeholder: '264', spacing_above: small, background: '', type: number, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: Swipe area. Default value is 4.4 x 60 cm = 264 cm2, text: ''}
-    name: sample_size
-    layout_properties: {grid_position: 'QOMDCW,IYDCNG CLOMLS,ZSFRQR'}
-    data_bindings:
-    - {property: text, code: 'self.item[''area'']', writeback: false}
-  - type: TextBox
-    properties: {role: null, bold: false, align: left, placeholder: '0.3', spacing_above: small, background: '', type: number, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: ''}
-    name: sample_volume
-    layout_properties: {grid_position: 'QOMDCW,IYDCNG ANHUJF,JROPQG'}
-    data_bindings:
-    - {property: text, code: 'self.item[''sample_volume'']', writeback: true}
-  - type: TextBox
-    properties: {role: null, bold: false, align: left, placeholder: '0.3', spacing_above: small, background: '', type: number, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: ''}
-    name: blank_volume
-    layout_properties: {grid_position: 'QOMDCW,IYDCNG BNCNPW,QKFAOI'}
-    data_bindings:
-    - {property: text, code: 'self.item[''blank_volume'']', writeback: true}
-  - type: DatePicker
-    properties: {role: null, bold: false, format: '', align: left, date: '', placeholder: date (if not today), pick_time: false, spacing_above: small, background: '', underline: false, font: '', max_date: '', foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', min_date: ''}
-    name: date_picker
-    layout_properties: {grid_position: 'QOMDCW,IYDCNG OGNPFA,TFYFQB'}
-    data_bindings:
-    - {property: date, code: 'self.item[''date'']', writeback: true}
-  - type: Label
-    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: ''}
-    name: server_status
-    layout_properties: {grid_position: 'QOMDCW,HLOCCF XQFFZF,VFKBRD'}
-  - type: Label
-    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: 'Backend: if not OK, restart iso5lab.eli-beams.eu and eventually start the cleanliness-connect.service via sudo systemctl start cleanliness-connect.service'}
-    name: label_4
-    layout_properties: {grid_position: 'QOMDCW,HLOCCF OAEJDA,ZFWMEP'}
-  - type: Label
-    properties: {role: null, bold: false, align: right, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: true, font_size: null, tooltip: '', text: Developed by Petr Zimmermann}
-    name: label_7
-    layout_properties: {grid_position: 'QOMDCW,HLOCCF EYVCQM,EFTYRS'}
-  - type: FileLoader
-    properties:
-      role: elevated-button
-      bold: false
-      file_types: text/csv, text/plain
-      align: left
-      spacing_above: small
-      file: null
-      background: ''
-      icon: fa:upload
-      multiple: false
-      underline: false
-      font: ''
-      icon_align: left
-      foreground: ''
-      show_state: true
-      files: []
-      spacing_below: small
-      visible: true
-      border: ''
-      italic: false
-      enabled: true
-      font_size: null
-      tooltip: ''
-      text: upload blank
-    name: loader_blank
-    layout_properties: {grid_position: 'JKPZFK,JYGNRW'}
-    event_bindings: {change: loader_blank_change}
-  - type: FileLoader
-    properties:
-      role: elevated-button
-      bold: false
-      file_types: text/csv, text/plain
-      align: left
-      spacing_above: small
-      file: null
-      background: ''
-      icon: fa:upload
-      multiple: true
-      underline: false
-      font: ''
-      icon_align: left
-      foreground: ''
-      show_state: true
-      files: []
-      spacing_below: small
-      visible: true
-      border: ''
-      italic: false
-      enabled: true
-      font_size: null
-      tooltip: ''
-      text: upload samples
-    name: loader_sample
-    layout_properties: {grid_position: 'JKPZFK,RENWOH'}
-    event_bindings: {change: loader_sample_change}
-  - type: Button
-    properties: {role: filled-button, bold: false, align: full, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: false, font_size: null, tooltip: '', text: generate graphs}
-    name: generate_graph
-    layout_properties: {grid_position: 'JKPZFK,IZDZLB'}
-    event_bindings: {click: generate_graph_click}
-  - type: Label
-    properties: {}
-    name: lbl_blank_name
-    layout_properties: {grid_position: 'MSQVQD,EBSSPK'}
-  - type: RichText
-    properties: {}
-    name: lbl_sample_name
-    layout_properties: {grid_position: 'MSQVQD,IAUIUV'}
-  - type: Label
-    properties: {}
-    name: label_1
-    layout_properties: {grid_position: 'MSQVQD,LGDCTQ'}
-  - type: RichText
-    properties:
-      role: null
-      format: markdown
-      align: left
-      spacing_above: small
-      content: "#### What's new? 01-08-2024: \n* some bughuting done"
-      background: ''
-      font: ''
-      foreground: ''
-      spacing_below: small
-      visible: true
-      border: ''
-      enable_slots: true
-      font_size: null
-      tooltip: ''
-      data: null
-    name: rich_text_1
-    layout_properties: {grid_position: 'BSFFCH,THMGYP'}
-    components:
-    - type: TextArea
-      properties: {role: null, bold: true, align: center, placeholder: Here you can add a project description for use in the email report, spacing_above: small, background: '', underline: false, font: '', foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, auto_expand: false, font_size: null, tooltip: '', height: '', text: ''}
-      name: project_description
-      layout_properties: {}
-  - type: Spacer
     properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'QOMDCW,OWROTR FXGBQX,IEOTVQ'}
+    name: label_3
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: sample area in cm2 (default 264), tooltip: '', underline: false, visible: true}
+    type: Label
+  - layout_properties: {grid_position: 'QOMDCW,OWROTR TYKQVP,OIGZWS'}
+    name: label_5
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: sample efficiency (default 0.3), tooltip: '', underline: false, visible: true}
+    type: Label
+  - layout_properties: {grid_position: 'QOMDCW,OWROTR QMNJYP,FHJVHP'}
+    name: label_6
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: blank efficiency (default 0.3), tooltip: '', underline: false, visible: true}
+    type: Label
+  - data_bindings:
+    - {code: 'self.item[''area'']', property: text, writeback: false}
+    layout_properties: {grid_position: 'QOMDCW,IYDCNG CLOMLS,ZSFRQR'}
+    name: sample_size
+    properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '264', role: null, spacing_above: small, spacing_below: small, text: '', tooltip: Swipe area. Default value is 4.4 x 60 cm = 264 cm2, type: number, underline: false, visible: true}
+    type: TextBox
+  - data_bindings:
+    - {code: 'self.item[''sample_volume'']', property: text, writeback: true}
+    layout_properties: {grid_position: 'QOMDCW,IYDCNG ANHUJF,JROPQG'}
+    name: sample_volume
+    properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '0.3', role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', type: number, underline: false, visible: true}
+    type: TextBox
+  - data_bindings:
+    - {code: 'self.item[''blank_volume'']', property: text, writeback: true}
+    layout_properties: {grid_position: 'QOMDCW,IYDCNG BNCNPW,QKFAOI'}
+    name: blank_volume
+    properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '0.3', role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', type: number, underline: false, visible: true}
+    type: TextBox
+  - data_bindings:
+    - {code: 'self.item[''date'']', property: date, writeback: true}
+    layout_properties: {grid_position: 'QOMDCW,IYDCNG OGNPFA,TFYFQB'}
+    name: date_picker
+    properties: {align: left, background: '', bold: false, border: '', date: '', enabled: true, font: '', font_size: null, foreground: '', format: '', italic: false, max_date: '', min_date: '', pick_time: false, placeholder: date (if not today), role: null, spacing_above: small, spacing_below: small, tooltip: '', underline: false, visible: true}
+    type: DatePicker
+  - layout_properties: {grid_position: 'QOMDCW,HLOCCF XQFFZF,VFKBRD'}
+    name: server_status
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+    type: Label
+  - layout_properties: {grid_position: 'QOMDCW,HLOCCF OAEJDA,ZFWMEP'}
+    name: label_4
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: 'Backend: if not OK, restart iso5lab.eli-beams.eu and eventually start the cleanliness-connect.service via sudo systemctl start cleanliness-connect.service', tooltip: '', underline: false, visible: true}
+    type: Label
+  - layout_properties: {grid_position: 'QOMDCW,HLOCCF EYVCQM,EFTYRS'}
+    name: label_7
+    properties: {align: right, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: true, role: null, spacing_above: small, spacing_below: small, text: Developed by Petr Zimmermann, tooltip: '', underline: false, visible: true}
+    type: Label
+  - event_bindings: {change: loader_blank_change}
+    layout_properties: {grid_position: 'JKPZFK,JYGNRW'}
+    name: loader_blank
+    properties:
+      align: left
+      background: ''
+      bold: false
+      border: ''
+      enabled: true
+      file: null
+      file_types: text/csv, text/plain
+      files: []
+      font: ''
+      font_size: null
+      foreground: ''
+      icon: fa:upload
+      icon_align: left
+      italic: false
+      multiple: false
+      role: elevated-button
+      show_state: true
+      spacing_above: small
+      spacing_below: small
+      text: upload blank
+      tooltip: ''
+      underline: false
+      visible: true
+    type: FileLoader
+  - event_bindings: {change: loader_sample_change}
+    layout_properties: {grid_position: 'JKPZFK,RENWOH'}
+    name: loader_sample
+    properties:
+      align: left
+      background: ''
+      bold: false
+      border: ''
+      enabled: true
+      file: null
+      file_types: text/csv, text/plain
+      files: []
+      font: ''
+      font_size: null
+      foreground: ''
+      icon: fa:upload
+      icon_align: left
+      italic: false
+      multiple: true
+      role: elevated-button
+      show_state: true
+      spacing_above: small
+      spacing_below: small
+      text: upload samples
+      tooltip: ''
+      underline: false
+      visible: true
+    type: FileLoader
+  - event_bindings: {click: generate_graph_click}
+    layout_properties: {grid_position: 'JKPZFK,IZDZLB'}
+    name: generate_graph
+    properties: {align: full, background: '', bold: false, border: '', enabled: false, font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: filled-button, spacing_above: small, spacing_below: small, text: generate graphs, tooltip: '', underline: false, visible: true}
+    type: Button
+  - layout_properties: {grid_position: 'MSQVQD,EBSSPK'}
+    name: lbl_blank_name
+    properties: {}
+    type: Label
+  - layout_properties: {grid_position: 'MSQVQD,IAUIUV'}
+    name: lbl_sample_name
+    properties: {}
+    type: RichText
+  - layout_properties: {grid_position: 'MSQVQD,LGDCTQ'}
+    name: label_1
+    properties: {}
+    type: Label
+  - components:
+    - layout_properties: {}
+      name: project_description
+      properties: {align: center, auto_expand: false, background: '', bold: true, border: '', enabled: true, font: '', font_size: null, foreground: '', height: '', italic: false, placeholder: Here you can add a project description for use in the email report, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+      type: TextArea
+    layout_properties: {grid_position: 'BSFFCH,THMGYP'}
+    name: rich_text_1
+    properties:
+      align: left
+      background: ''
+      border: ''
+      content: "#### What's new? 01-08-2024: \n* some bughuting done"
+      data: null
+      enable_slots: true
+      font: ''
+      font_size: null
+      foreground: ''
+      format: markdown
+      role: null
+      spacing_above: small
+      spacing_below: small
+      tooltip: ''
+      visible: true
+    type: RichText
+  - layout_properties: {grid_position: 'FVRROX,FZMSNA'}
     name: spacer_1
-    layout_properties: {grid_position: 'FVRROX,FZMSNA'}
-  - type: RepeatingPanel
-    properties: {item_template: main.graphs}
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'PGLTMR,GYHORJ'}
     name: graph_repeating_panel
-    layout_properties: {grid_position: 'PGLTMR,GYHORJ'}
-  - type: Button
-    properties: {role: tonal-button, bold: false, align: center, spacing_above: small, background: '', icon: 'fa:envelope', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: Send by e-mail}
-    name: mail_button
+    properties: {item_template: main.graphs}
+    type: RepeatingPanel
+  - event_bindings: {click: mail_button_click}
     layout_properties: {grid_position: 'RHJJLY,BMLNOS'}
-    event_bindings: {click: mail_button_click}
-- type: FlowPanel
-  properties: {}
+    name: mail_button
+    properties: {align: center, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: 'fa:envelope', icon_align: left, italic: false, role: tonal-button, spacing_above: small, spacing_below: small, text: Send by e-mail, tooltip: '', underline: false, visible: true}
+    type: Button
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
   name: navbar_links
-  layout_properties: {slot: nav-right}
-- type: Label
-  properties: {role: null, bold: false, align: center, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: ISO5 LAB @ ELI Swipe test evaluation}
+  properties: {}
+  type: FlowPanel
+- layout_properties: {slot: title}
   name: label_2
-  layout_properties: {slot: title}
+  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: ISO5 LAB @ ELI Swipe test evaluation, tooltip: '', underline: false, visible: true}
+  type: Label
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true
